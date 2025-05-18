@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['person']
+
+roboflow:
+  workspace: projects-gvrv7
+  project: crowd-counting-uiyz6
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/projects-gvrv7/crowd-counting-uiyz6/dataset/2

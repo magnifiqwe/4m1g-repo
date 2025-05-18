@@ -3,10 +3,16 @@ import cv2
 import random
 
 def count_and_save_people_in_image(image_path, output_path):
-    model = YOLO("yolov8n.pt")
+    model = YOLO("yolo11n.pt")
     image = cv2.imread(image_path)
+    model.train(
+        data="crowd/data.yaml",  # например: "dataset/data.yaml"
+        epochs=30,
+        imgsz=640,
+        batch=16,
+        name="my_custom_model"
+    )
     results = model(image)
-
     person_count = 0
     for result in results:
         boxes = result.boxes
